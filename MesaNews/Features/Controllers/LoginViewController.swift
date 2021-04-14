@@ -7,13 +7,21 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
+  
+    @IBAction func accessUserView(_ sender: UIButton) {
+        performSegue(withIdentifier: "CreateUserSegue", sender: nil)
+    }
+    
+}
+
+// MARK: Life cycle
+extension LoginViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
 }
 

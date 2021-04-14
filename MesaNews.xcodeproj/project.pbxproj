@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2259299C26270EDD00791DEC /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259299B26270EDD00791DEC /* UserViewController.swift */; };
 		229AD4C7262655BA006915C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4C6262655BA006915C1 /* AppDelegate.swift */; };
 		229AD4C9262655BA006915C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4C8262655BA006915C1 /* SceneDelegate.swift */; };
 		229AD4CB262655BA006915C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4CA262655BA006915C1 /* LoginViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		22540C3AC530A71528BB5E59 /* Pods-MesaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNews.debug.xcconfig"; path = "Target Support Files/Pods-MesaNews/Pods-MesaNews.debug.xcconfig"; sourceTree = "<group>"; };
+		2259299B26270EDD00791DEC /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		229AD4C3262655BA006915C1 /* MesaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MesaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229AD4C6262655BA006915C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229AD4C8262655BA006915C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				229AD4CA262655BA006915C1 /* LoginViewController.swift */,
+				2259299B26270EDD00791DEC /* UserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				229AD4CB262655BA006915C1 /* LoginViewController.swift in Sources */,
+				2259299C26270EDD00791DEC /* UserViewController.swift in Sources */,
 				229AD4C7262655BA006915C1 /* AppDelegate.swift in Sources */,
 				229AD4C9262655BA006915C1 /* SceneDelegate.swift in Sources */,
 			);
