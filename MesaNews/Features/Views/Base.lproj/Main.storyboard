@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="758" y="-220"/>
         </scene>
-        <!--Criar Usuário-->
+        <!--Cadastro de Usuário-->
         <scene sceneID="50R-Aw-2M5">
             <objects>
                 <viewController id="8gq-Df-H5r" customClass="UserViewController" customModule="MesaNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,29 +97,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="0OJ-l4-Om7">
                                 <rect key="frame" x="17" y="167" width="286" height="234"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grm-25-7v1">
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grm-25-7v1" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="286" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BtD-dT-WT7">
+                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BtD-dT-WT7" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="51" width="286" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tb6-Wl-CPJ">
+                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tb6-Wl-CPJ" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="102" width="286" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbn-px-9t0">
+                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbn-px-9t0" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="153" width="286" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-th-l3H">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-th-l3H">
                                         <rect key="frame" x="0.0" y="204" width="286" height="30"/>
-                                        <state key="normal" title="Criar"/>
+                                        <state key="normal" title="Salvar"/>
+                                        <connections>
+                                            <action selector="save:" destination="8gq-Df-H5r" eventType="touchUpInside" id="e0w-Ft-zr9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -133,7 +136,14 @@
                             <constraint firstItem="0OJ-l4-Om7" firstAttribute="leading" secondItem="e7I-sL-4fh" secondAttribute="leading" constant="17" id="yQQ-7m-nhZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Criar Usuário" id="kfU-ir-bPU"/>
+                    <navigationItem key="navigationItem" title="Cadastro de Usuário" id="kfU-ir-bPU"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="cbn-px-9t0" id="Miy-M1-gOs"/>
+                        <outlet property="emailTextField" destination="BtD-dT-WT7" id="nUj-2h-sjg"/>
+                        <outlet property="nameTextField" destination="Grm-25-7v1" id="rBe-5M-ovn"/>
+                        <outlet property="passwordTextField" destination="tb6-Wl-CPJ" id="Cay-tU-hdg"/>
+                        <outlet property="saveButton" destination="H8c-th-l3H" id="7Cb-vH-qNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jw5-M5-S4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

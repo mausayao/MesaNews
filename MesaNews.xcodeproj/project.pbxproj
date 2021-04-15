@@ -3,11 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2259299C26270EDD00791DEC /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259299B26270EDD00791DEC /* UserViewController.swift */; };
+		225929A1262714F800791DEC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929A0262714F800791DEC /* User.swift */; };
+		225929A826271B3300791DEC /* MSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929A726271B3300791DEC /* MSTextField.swift */; };
+		225929B126271E2000791DEC /* MSTextFieldPressetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929B026271E2000791DEC /* MSTextFieldPressetProtocol.swift */; };
+		225929C62627294D00791DEC /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929C52627294D00791DEC /* DefaultTextField.swift */; };
+		225929CE2627370200791DEC /* TextFieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929CD2627370200791DEC /* TextFieldConstants.swift */; };
+		225929D6262745B700791DEC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929D5262745B700791DEC /* UserViewModel.swift */; };
+		225929E72627861500791DEC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929E62627861500791DEC /* UserService.swift */; };
 		229AD4C7262655BA006915C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4C6262655BA006915C1 /* AppDelegate.swift */; };
 		229AD4C9262655BA006915C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4C8262655BA006915C1 /* SceneDelegate.swift */; };
 		229AD4CB262655BA006915C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4CA262655BA006915C1 /* LoginViewController.swift */; };
@@ -16,6 +23,9 @@
 		229AD4D3262655BB006915C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229AD4D1262655BB006915C1 /* LaunchScreen.storyboard */; };
 		229AD4DE262655BB006915C1 /* MesaNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4DD262655BB006915C1 /* MesaNewsTests.swift */; };
 		229AD4E9262655BB006915C1 /* MesaNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4E8262655BB006915C1 /* MesaNewsUITests.swift */; };
+		22AE57282627A6280058D672 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE57272627A6280058D672 /* Token.swift */; };
+		22AE572E2627AF670058D672 /* UserViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE572D2627AF670058D672 /* UserViewControllerDelegate.swift */; };
+		22AE574B2627BC560058D672 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE574A2627BC560058D672 /* ServiceConstants.swift */; };
 		705626B9573BAFD679C810E6 /* Pods_MesaNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54AD01E8E4739EF0C332F220 /* Pods_MesaNewsTests.framework */; };
 		9D794D66B50C5735D4696CEF /* Pods_MesaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CB1BE4C997900E8E66881C /* Pods_MesaNews.framework */; };
 		C61E1C71E60FA4C31F8D82B8 /* Pods_MesaNews_MesaNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FCEA5E6E5AD7BE129C8FB5 /* Pods_MesaNews_MesaNewsUITests.framework */; };
@@ -41,6 +51,13 @@
 /* Begin PBXFileReference section */
 		22540C3AC530A71528BB5E59 /* Pods-MesaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNews.debug.xcconfig"; path = "Target Support Files/Pods-MesaNews/Pods-MesaNews.debug.xcconfig"; sourceTree = "<group>"; };
 		2259299B26270EDD00791DEC /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		225929A0262714F800791DEC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		225929A726271B3300791DEC /* MSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSTextField.swift; sourceTree = "<group>"; };
+		225929B026271E2000791DEC /* MSTextFieldPressetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSTextFieldPressetProtocol.swift; sourceTree = "<group>"; };
+		225929C52627294D00791DEC /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
+		225929CD2627370200791DEC /* TextFieldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConstants.swift; sourceTree = "<group>"; };
+		225929D5262745B700791DEC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		225929E62627861500791DEC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		229AD4C3262655BA006915C1 /* MesaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MesaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229AD4C6262655BA006915C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229AD4C8262655BA006915C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +72,9 @@
 		229AD4E4262655BB006915C1 /* MesaNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MesaNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		229AD4E8262655BB006915C1 /* MesaNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaNewsUITests.swift; sourceTree = "<group>"; };
 		229AD4EA262655BB006915C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22AE57272627A6280058D672 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		22AE572D2627AF670058D672 /* UserViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerDelegate.swift; sourceTree = "<group>"; };
+		22AE574A2627BC560058D672 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		3984248DF8350FFC481BA8EC /* Pods-MesaNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.release.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		414DD46B11637B01C16E430C /* Pods-MesaNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		45CB1BE4C997900E8E66881C /* Pods_MesaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MesaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +113,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		225929A526271A6700791DEC /* MSTextField */ = {
+			isa = PBXGroup;
+			children = (
+				225929CD2627370200791DEC /* TextFieldConstants.swift */,
+				225929C42627292A00791DEC /* model */,
+				225929AF26271DE800791DEC /* Protocols */,
+				225929A626271AFB00791DEC /* Views */,
+			);
+			path = MSTextField;
+			sourceTree = "<group>";
+		};
+		225929A626271AFB00791DEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				225929A726271B3300791DEC /* MSTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		225929AF26271DE800791DEC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				225929B026271E2000791DEC /* MSTextFieldPressetProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		225929C42627292A00791DEC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				225929C52627294D00791DEC /* DefaultTextField.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		225929E12627842300791DEC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				225929E62627861500791DEC /* UserService.swift */,
+				22AE574A2627BC560058D672 /* ServiceConstants.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		229AD4BA262655BA006915C1 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +182,7 @@
 		229AD4C5262655BA006915C1 /* MesaNews */ = {
 			isa = PBXGroup;
 			children = (
+				225929E12627842300791DEC /* Services */,
 				229AD4FB26265610006915C1 /* Components */,
 				229AD4FA26265606006915C1 /* Features */,
 				229AD4F9262655F9006915C1 /* Extensions */,
@@ -157,6 +222,7 @@
 		229AD4FA26265606006915C1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				22AE572C2627AF410058D672 /* Protocols */,
 				229AD4FF26265648006915C1 /* Models */,
 				229AD4FE2626563E006915C1 /* ViewModels */,
 				229AD4FD26265633006915C1 /* Controllers */,
@@ -168,6 +234,7 @@
 		229AD4FB26265610006915C1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				225929A526271A6700791DEC /* MSTextField */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -193,6 +260,7 @@
 		229AD4FE2626563E006915C1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				225929D5262745B700791DEC /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -200,8 +268,18 @@
 		229AD4FF26265648006915C1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				225929A0262714F800791DEC /* User.swift */,
+				22AE57272627A6280058D672 /* Token.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		22AE572C2627AF410058D672 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				22AE572D2627AF670058D672 /* UserViewControllerDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		67787E97182C01303DB4136A /* Pods */ = {
@@ -238,6 +316,7 @@
 				229AD4BF262655BA006915C1 /* Sources */,
 				229AD4C0262655BA006915C1 /* Frameworks */,
 				229AD4C1262655BA006915C1 /* Resources */,
+				174900AA3C6FBCF0C83D48CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,6 +354,7 @@
 				229AD4E0262655BB006915C1 /* Sources */,
 				229AD4E1262655BB006915C1 /* Frameworks */,
 				229AD4E2262655BB006915C1 /* Resources */,
+				DFB81A4D1BC4F3C34FE45662 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -356,6 +436,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		174900AA3C6FBCF0C83D48CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MesaNews/Pods-MesaNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MesaNews/Pods-MesaNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MesaNews/Pods-MesaNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		38E2CC964554947471F9F888 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -400,6 +497,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DFB81A4D1BC4F3C34FE45662 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MesaNews-MesaNewsUITests/Pods-MesaNews-MesaNewsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MesaNews-MesaNewsUITests/Pods-MesaNews-MesaNewsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MesaNews-MesaNewsUITests/Pods-MesaNews-MesaNewsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F9BEA09CC52A600BED07DD66 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,10 +543,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AE572E2627AF670058D672 /* UserViewControllerDelegate.swift in Sources */,
 				229AD4CB262655BA006915C1 /* LoginViewController.swift in Sources */,
 				2259299C26270EDD00791DEC /* UserViewController.swift in Sources */,
 				229AD4C7262655BA006915C1 /* AppDelegate.swift in Sources */,
+				22AE57282627A6280058D672 /* Token.swift in Sources */,
+				225929D6262745B700791DEC /* UserViewModel.swift in Sources */,
+				225929A1262714F800791DEC /* User.swift in Sources */,
+				225929CE2627370200791DEC /* TextFieldConstants.swift in Sources */,
+				225929E72627861500791DEC /* UserService.swift in Sources */,
+				225929B126271E2000791DEC /* MSTextFieldPressetProtocol.swift in Sources */,
 				229AD4C9262655BA006915C1 /* SceneDelegate.swift in Sources */,
+				225929A826271B3300791DEC /* MSTextField.swift in Sources */,
+				225929C62627294D00791DEC /* DefaultTextField.swift in Sources */,
+				22AE574B2627BC560058D672 /* ServiceConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -552,6 +677,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
