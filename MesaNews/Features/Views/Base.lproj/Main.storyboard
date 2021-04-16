@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URv-Hu-Cja">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,7 +14,7 @@
             <objects>
                 <navigationController id="URv-Hu-Cja" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PEe-cT-sJe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -29,97 +30,121 @@
             <objects>
                 <viewController id="Lgn-qq-o6I" customClass="LoginViewController" customModule="MesaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J8m-pV-q2v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ylp-0V-zNm">
-                                <rect key="frame" x="17" y="216.5" width="286" height="135"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_3" translatesAutoresizingMaskIntoConstraints="NO" id="Vdq-jC-bM4">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ylp-0V-zNm">
+                                <rect key="frame" x="17" y="144" width="341" height="211"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-6Q-cHZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="286" height="34"/>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-6Q-cHZ" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0mc-fl-FzH"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lLS-OM-Seu">
-                                        <rect key="frame" x="0.0" y="51" width="286" height="34"/>
+                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lLS-OM-Seu" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="57" width="341" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WKQ-MK-Z4R">
-                                        <rect key="frame" x="0.0" y="102" width="286" height="33"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwq-i6-WQ7">
-                                                <rect key="frame" x="0.0" y="0.0" width="143" height="33"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="Criar conta">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="accessUserView:" destination="Lgn-qq-o6I" eventType="touchUpInside" id="LHb-ze-d5l"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ify-Dw-qS2">
-                                                <rect key="frame" x="143" y="0.0" width="143" height="33"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="Acessar"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ify-Dw-qS2">
+                                        <rect key="frame" x="0.0" y="114" width="341" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Acessar">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="accessNews:" destination="Lgn-qq-o6I" eventType="touchUpInside" id="cdx-2l-KaO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwq-i6-WQ7" userLabel="Signup Button">
+                                        <rect key="frame" x="0.0" y="171" width="341" height="40"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="ou crie sua conta">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="accessUserView:" destination="Lgn-qq-o6I" eventType="touchUpInside" id="g7G-cq-2OD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4DP-Db-RG8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ylp-0V-zNm" firstAttribute="top" secondItem="4DP-Db-RG8" secondAttribute="top" constant="100" id="18H-Zz-efY"/>
+                            <constraint firstAttribute="bottom" secondItem="Vdq-jC-bM4" secondAttribute="bottom" id="6Ot-mZ-2QQ"/>
                             <constraint firstItem="4DP-Db-RG8" firstAttribute="trailing" secondItem="Ylp-0V-zNm" secondAttribute="trailing" constant="17" id="7qN-6n-ELt"/>
-                            <constraint firstItem="Ylp-0V-zNm" firstAttribute="centerY" secondItem="J8m-pV-q2v" secondAttribute="centerY" id="GCb-16-zv5"/>
+                            <constraint firstItem="Vdq-jC-bM4" firstAttribute="top" secondItem="4DP-Db-RG8" secondAttribute="top" id="85X-JV-tPC"/>
                             <constraint firstItem="Ylp-0V-zNm" firstAttribute="centerX" secondItem="J8m-pV-q2v" secondAttribute="centerX" id="MaY-yA-Dsg"/>
+                            <constraint firstItem="4DP-Db-RG8" firstAttribute="trailing" secondItem="Vdq-jC-bM4" secondAttribute="trailing" id="QrR-E5-jzs"/>
                             <constraint firstItem="Ylp-0V-zNm" firstAttribute="leading" secondItem="4DP-Db-RG8" secondAttribute="leading" constant="17" id="ffw-Id-lWi"/>
+                            <constraint firstItem="Vdq-jC-bM4" firstAttribute="leading" secondItem="4DP-Db-RG8" secondAttribute="leading" id="oqt-eo-X0o"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="Oip-zE-RBm"/>
                     <connections>
+                        <outlet property="emailTextField" destination="AiO-6Q-cHZ" id="MNW-Xf-rVt"/>
+                        <outlet property="passwordTextField" destination="lLS-OM-Seu" id="At8-BW-az9"/>
+                        <outlet property="signinButton" destination="ify-Dw-qS2" id="ur1-Ms-Snp"/>
                         <segue destination="8gq-Df-H5r" kind="show" identifier="CreateUserSegue" id="Rrw-7G-goJ"/>
+                        <segue destination="YGI-0q-oyb" kind="show" identifier="NewsSegue" id="Dkl-XK-g9X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WcK-xY-LkP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="-220"/>
+            <point key="canvasLocation" x="756.92307692307691" y="-221.09004739336493"/>
         </scene>
         <!--Cadastro de Usuário-->
         <scene sceneID="50R-Aw-2M5">
             <objects>
                 <viewController id="8gq-Df-H5r" customClass="UserViewController" customModule="MesaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1d2-m9-gxe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="0OJ-l4-Om7">
-                                <rect key="frame" x="17" y="167" width="286" height="234"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_3" translatesAutoresizingMaskIntoConstraints="NO" id="LCg-QS-kwr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="0OJ-l4-Om7">
+                                <rect key="frame" x="17" y="64" width="341" height="268"/>
                                 <subviews>
                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grm-25-7v1" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="286" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="mwG-Qg-L9b"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BtD-dT-WT7" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="51" width="286" height="34"/>
+                                        <rect key="frame" x="0.0" y="57" width="341" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tb6-Wl-CPJ" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="102" width="286" height="34"/>
+                                        <rect key="frame" x="0.0" y="114" width="341" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbn-px-9t0" customClass="MSTextField" customModule="MesaNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="153" width="286" height="34"/>
+                                        <rect key="frame" x="0.0" y="171" width="341" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-th-l3H">
-                                        <rect key="frame" x="0.0" y="204" width="286" height="30"/>
-                                        <state key="normal" title="Salvar"/>
+                                        <rect key="frame" x="0.0" y="228" width="341" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <state key="normal" title="Salvar">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="save:" destination="8gq-Df-H5r" eventType="touchUpInside" id="e0w-Ft-zr9"/>
                                         </connections>
@@ -128,12 +153,16 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e7I-sL-4fh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="LCg-QS-kwr" firstAttribute="top" secondItem="1d2-m9-gxe" secondAttribute="top" id="2Cc-Sp-J5Q"/>
+                            <constraint firstItem="LCg-QS-kwr" firstAttribute="leading" secondItem="e7I-sL-4fh" secondAttribute="leading" id="6AD-SF-RMK"/>
                             <constraint firstItem="0OJ-l4-Om7" firstAttribute="centerX" secondItem="1d2-m9-gxe" secondAttribute="centerX" id="ReA-Bb-gmc"/>
+                            <constraint firstItem="LCg-QS-kwr" firstAttribute="trailing" secondItem="e7I-sL-4fh" secondAttribute="trailing" id="TSl-nH-7yZ"/>
                             <constraint firstItem="e7I-sL-4fh" firstAttribute="trailing" secondItem="0OJ-l4-Om7" secondAttribute="trailing" constant="17" id="XfZ-Z9-cD9"/>
-                            <constraint firstItem="0OJ-l4-Om7" firstAttribute="centerY" secondItem="1d2-m9-gxe" secondAttribute="centerY" id="o1c-86-H6U"/>
+                            <constraint firstItem="0OJ-l4-Om7" firstAttribute="top" secondItem="e7I-sL-4fh" secondAttribute="top" constant="20" id="a5K-z8-cSV"/>
                             <constraint firstItem="0OJ-l4-Om7" firstAttribute="leading" secondItem="e7I-sL-4fh" secondAttribute="leading" constant="17" id="yQQ-7m-nhZ"/>
+                            <constraint firstAttribute="bottom" secondItem="LCg-QS-kwr" secondAttribute="bottom" id="zNs-Zx-NhZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cadastro de Usuário" id="kfU-ir-bPU"/>
@@ -147,12 +176,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jw5-M5-S4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="-419"/>
+            <point key="canvasLocation" x="1813.5999999999999" y="-653.20197044334975"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="9go-SV-rah">
+            <objects>
+                <collectionViewController id="YGI-0q-oyb" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Mru-UY-LZM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cek-PD-31r">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LZg-VK-j6Y">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AuP-Dz-EkV">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="YGI-0q-oyb" id="DS7-h7-RKZ"/>
+                            <outlet property="delegate" destination="YGI-0q-oyb" id="fEC-j8-4mV"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="bdH-RK-HHX"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xga-yP-Ul5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815" y="105"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background_3" width="640" height="1136"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

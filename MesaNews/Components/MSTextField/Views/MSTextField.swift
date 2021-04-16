@@ -32,7 +32,7 @@ extension MSTextField {
         keyboardType = presset.keyboardType
         textContentType = presset.contentType
         
-        backgroundColor = .clear
+        backgroundColor = .white
         
         font = UIFont.preferredFont(forTextStyle: .body)
         textColor = .black

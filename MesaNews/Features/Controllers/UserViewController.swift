@@ -21,6 +21,7 @@ final class UserViewController: UIViewController {
     
     @IBAction private func save(_ sender: UIButton) {
         viewModel.sendUser()
+        self.showSpinner(onView: self.view)
     }
     
 }
@@ -38,7 +39,13 @@ extension UserViewController {
         
         kvo = viewModel.observe(\.isValid, options: [.initial, .new]) { viewModel, change in
             self.saveButton.isEnabled = viewModel.isValid
+            Utils.configButton(self.saveButton)
         }
+        
+        saveButton.layer.cornerRadius = 20.0
+        
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
         
     }
 }
@@ -52,31 +59,42 @@ extension UserViewController: UITextFieldDelegate {
         
         if nameTextField.tag == tag {
             
-            if let name = nameTextField.text {
+            if let name = nameTextField.text, !name.isEmpty {
                 viewModel.name = name
             }
         }
         
         if emailTextField.tag == tag {
             
-            if let email = emailTextField.text {
+            if let email = emailTextField.text, !email.isEmpty {
                 
-                if isValid(email) {
+                if Utils.isValidEmail(email) {
                     viewModel.email = email
                 } else {
-                    message(title: "E-mail", message: "Campo inválido", error: true)
+                    Utils.message(title: "E-mail",
+                                  message: "Campo inválido",
+                                  error: true,
+                                  view: self,
+                                  completion: nil)
                 }
             }
         }
         
         if confirmPasswordTextField.tag == tag {
             
-            guard let confirm = confirmPasswordTextField.text else { return }
-            guard let pass = passwordTextField.text else { return }
+            guard let confirm = confirmPasswordTextField.text, !confirm.isEmpty else { return }
+            guard let pass = passwordTextField.text, !pass.isEmpty else { return }
             
             if !isAPasswordValid(password: pass, confirm: confirm) {
-                message(title: "Senha", message: "Senha não são iguais", error: true)
+                
+                Utils.message(title: "Senha",
+                              message: "Senha não são iguais",
+                              error: true,
+                              view: self,
+                              completion: nil)
+                
             } else {
+                
                 viewModel.password = pass
             }
         }
@@ -115,33 +133,10 @@ extension UserViewController: UITextFieldDelegate {
 // MARK: Helper
 extension UserViewController {
     
-    private func isValid(_ email: String) -> Bool {
-        
-        let range = NSRange(location: 0, length: email.utf16.count)
-        let regex = try? NSRegularExpression(pattern: TextFieldConstants.Regex.email)
-        return regex?.firstMatch(in: email, options: [], range: range) != nil
-        
-    }
-    
     private func isAPasswordValid(password: String, confirm: String) -> Bool {
         
         return password == confirm
         
-    }
-    
-    private func message(title: String, message: String, error: Bool = false) {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "OK", style: .default) { action in
-            if (!error) {
-                self.viewModel = UserViewModel(user: .init(name: "", email: "", password: ""))
-                self.clearFields()
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
     }
     
     private func configureTextFields() {
@@ -200,16 +195,20 @@ extension UserViewController {
 extension UserViewController: UserViewControllerDelegate {
     
     func getInformationBack(data: String?) {
-        
+        self.removeSpinner()
         if let result = data {
             
-            message(title: "Usuário", message: "Cadastro realizado com sucesso")
-            KeychainWrapper.standard.set("token", forKey: result)
-            
+            Utils.message(title: "Usuário", message: "Cadastro realizado com sucesso", view: self) {
+                KeychainWrapper.standard.set("token", forKey: result)
+                self.navigationController?.popViewController(animated: true)
+            }
+           
         } else {
             
-            message(title: "Erro!", message: "Ocorreu um erro ao realizar o cadastro", error: true)
-            
+            Utils.message(title: "Erro!",
+                          message: "Ocorreu um erro ao realizar o cadastro",
+                          error: true,
+                          view: self, completion: nil)
         }
     }
     
