@@ -10,7 +10,8 @@
 2. UIKit
 3. Cocoapods
 4. Alamofire
-5. SwiftKeychainWrapper
+5. AlamofireImage
+6. SwiftKeychainWrapper
 
 #### Arquitetura
 

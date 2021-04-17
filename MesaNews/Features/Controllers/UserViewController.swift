@@ -199,7 +199,7 @@ extension UserViewController: UserViewControllerDelegate {
         if let result = data {
             
             Utils.message(title: "Usuário", message: "Cadastro realizado com sucesso", view: self) {
-                KeychainWrapper.standard.set("token", forKey: result)
+                KeychainWrapper.standard.set(result, forKey: "token")
                 self.navigationController?.popViewController(animated: true)
             }
            

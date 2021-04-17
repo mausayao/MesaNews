@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2206D6382629B1F800FB50F5 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206D6372629B1F800FB50F5 /* NewsService.swift */; };
+		2206D6412629CEF400FB50F5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206D6402629CEF400FB50F5 /* NewsViewController.swift */; };
+		2206D6462629D8AA00FB50F5 /* HighlightsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206D6452629D8AA00FB50F5 /* HighlightsCollectionViewCell.swift */; };
+		2206D64B2629E27200FB50F5 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206D64A2629E27200FB50F5 /* News.swift */; };
+		2206D65A262A1BDC00FB50F5 /* CollectionHighlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206D659262A1BDC00FB50F5 /* CollectionHighlights.swift */; };
 		2259299C26270EDD00791DEC /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259299B26270EDD00791DEC /* UserViewController.swift */; };
 		225929A1262714F800791DEC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929A0262714F800791DEC /* User.swift */; };
 		225929A826271B3300791DEC /* MSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929A726271B3300791DEC /* MSTextField.swift */; };
@@ -32,6 +37,8 @@
 		22D118D426289032007A2F8B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D118D326289032007A2F8B /* Utils.swift */; };
 		22D118DC2628ADCB007A2F8B /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D118DB2628ADCB007A2F8B /* UIViewController+extensions.swift */; };
 		22D118E12628B81E007A2F8B /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D118E02628B81E007A2F8B /* LoginViewControllerDelegate.swift */; };
+		22EB6E25262B20F500AF9D91 /* HighlightsVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EB6E24262B20F500AF9D91 /* HighlightsVewModel.swift */; };
+		22EB6E2D262B22EA00AF9D91 /* HighlightsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EB6E2C262B22EA00AF9D91 /* HighlightsViewControllerDelegate.swift */; };
 		705626B9573BAFD679C810E6 /* Pods_MesaNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54AD01E8E4739EF0C332F220 /* Pods_MesaNewsTests.framework */; };
 		9D794D66B50C5735D4696CEF /* Pods_MesaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CB1BE4C997900E8E66881C /* Pods_MesaNews.framework */; };
 		C61E1C71E60FA4C31F8D82B8 /* Pods_MesaNews_MesaNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FCEA5E6E5AD7BE129C8FB5 /* Pods_MesaNews_MesaNewsUITests.framework */; };
@@ -55,6 +62,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2206D6372629B1F800FB50F5 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		2206D6402629CEF400FB50F5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		2206D6452629D8AA00FB50F5 /* HighlightsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsCollectionViewCell.swift; sourceTree = "<group>"; };
+		2206D64A2629E27200FB50F5 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		2206D659262A1BDC00FB50F5 /* CollectionHighlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHighlights.swift; sourceTree = "<group>"; };
 		22540C3AC530A71528BB5E59 /* Pods-MesaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNews.debug.xcconfig"; path = "Target Support Files/Pods-MesaNews/Pods-MesaNews.debug.xcconfig"; sourceTree = "<group>"; };
 		2259299B26270EDD00791DEC /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		225929A0262714F800791DEC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -87,6 +99,8 @@
 		22D118D326289032007A2F8B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		22D118DB2628ADCB007A2F8B /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		22D118E02628B81E007A2F8B /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
+		22EB6E24262B20F500AF9D91 /* HighlightsVewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsVewModel.swift; sourceTree = "<group>"; };
+		22EB6E2C262B22EA00AF9D91 /* HighlightsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewControllerDelegate.swift; sourceTree = "<group>"; };
 		3984248DF8350FFC481BA8EC /* Pods-MesaNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.release.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		414DD46B11637B01C16E430C /* Pods-MesaNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		45CB1BE4C997900E8E66881C /* Pods_MesaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MesaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +180,7 @@
 				225929E62627861500791DEC /* UserService.swift */,
 				22AE574A2627BC560058D672 /* ServiceConstants.swift */,
 				22D118C826286AEC007A2F8B /* LoginService.swift */,
+				2206D6372629B1F800FB50F5 /* NewsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -259,6 +274,7 @@
 			children = (
 				229AD4CC262655BA006915C1 /* Main.storyboard */,
 				229AD4D1262655BB006915C1 /* LaunchScreen.storyboard */,
+				2206D6452629D8AA00FB50F5 /* HighlightsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +284,7 @@
 			children = (
 				229AD4CA262655BA006915C1 /* LoginViewController.swift */,
 				2259299B26270EDD00791DEC /* UserViewController.swift */,
+				2206D6402629CEF400FB50F5 /* NewsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +294,7 @@
 			children = (
 				225929D5262745B700791DEC /* UserViewModel.swift */,
 				22D118CD262880F8007A2F8B /* LoginViewModel.swift */,
+				22EB6E24262B20F500AF9D91 /* HighlightsVewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -287,6 +305,8 @@
 				225929A0262714F800791DEC /* User.swift */,
 				22AE57272627A6280058D672 /* Token.swift */,
 				22D118C326286937007A2F8B /* Login.swift */,
+				2206D64A2629E27200FB50F5 /* News.swift */,
+				2206D659262A1BDC00FB50F5 /* CollectionHighlights.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +316,7 @@
 			children = (
 				22AE572D2627AF670058D672 /* UserViewControllerDelegate.swift */,
 				22D118E02628B81E007A2F8B /* LoginViewControllerDelegate.swift */,
+				22EB6E2C262B22EA00AF9D91 /* HighlightsViewControllerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -579,14 +600,21 @@
 				22D118C426286937007A2F8B /* Login.swift in Sources */,
 				22D118C926286AEC007A2F8B /* LoginService.swift in Sources */,
 				225929A1262714F800791DEC /* User.swift in Sources */,
+				2206D65A262A1BDC00FB50F5 /* CollectionHighlights.swift in Sources */,
+				2206D6382629B1F800FB50F5 /* NewsService.swift in Sources */,
 				225929CE2627370200791DEC /* TextFieldConstants.swift in Sources */,
 				22D118CE262880F8007A2F8B /* LoginViewModel.swift in Sources */,
 				22D118D426289032007A2F8B /* Utils.swift in Sources */,
 				225929E72627861500791DEC /* UserService.swift in Sources */,
+				2206D6412629CEF400FB50F5 /* NewsViewController.swift in Sources */,
 				225929B126271E2000791DEC /* MSTextFieldPressetProtocol.swift in Sources */,
 				229AD4C9262655BA006915C1 /* SceneDelegate.swift in Sources */,
+				22EB6E2D262B22EA00AF9D91 /* HighlightsViewControllerDelegate.swift in Sources */,
+				22EB6E25262B20F500AF9D91 /* HighlightsVewModel.swift in Sources */,
+				2206D64B2629E27200FB50F5 /* News.swift in Sources */,
 				22D118DC2628ADCB007A2F8B /* UIViewController+extensions.swift in Sources */,
 				225929A826271B3300791DEC /* MSTextField.swift in Sources */,
+				2206D6462629D8AA00FB50F5 /* HighlightsCollectionViewCell.swift in Sources */,
 				225929C62627294D00791DEC /* DefaultTextField.swift in Sources */,
 				22AE574B2627BC560058D672 /* ServiceConstants.swift in Sources */,
 			);

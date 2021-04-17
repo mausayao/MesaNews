@@ -35,6 +35,8 @@ extension LoginViewController {
         
         super.viewDidLoad()
         
+        sendToNewsController()
+        
         viewModel = LoginViewModel(login: .init(email: "", password: ""))
         viewModel.delegate = self
         
@@ -85,6 +87,11 @@ extension LoginViewController {
         viewModel.email = ""
         viewModel.password = ""
         viewModel.validate()
+    }
+    
+    private func sendToNewsController() {
+        guard let _ = KeychainWrapper.standard.string(forKey: "token") else { return }
+        self.performSegue(withIdentifier: "NewsSegue", sender: nil)
     }
     
 }
@@ -156,7 +163,7 @@ extension LoginViewController: LoginViewControllerDelegate {
         if let result = data {
             
             clearFields()
-            KeychainWrapper.standard.set("token", forKey: result)
+            KeychainWrapper.standard.set(result, forKey: "token")
             self.performSegue(withIdentifier: "NewsSegue", sender: nil)
             
         } else {

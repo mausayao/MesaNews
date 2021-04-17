@@ -8,6 +8,7 @@ target 'MesaNews' do
   # Pods for MesaNews
   pod 'Alamofire', '~> 5.2'
   pod 'SwiftKeychainWrapper', '~> 4.0.1'
+  pod 'AlamofireImage', '~> 4.1'
 
   target 'MesaNewsTests' do
     inherit! :search_paths
