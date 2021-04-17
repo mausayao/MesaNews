@@ -32,9 +32,11 @@ final class NewsService {
         return AF.request("\(ServiceConstants.baseURL)\(urlHighlights)", method: .get, headers: confgureHeaders())
     }
     
-    func news() -> DataRequest {
+    func news(currentPage:Int = 1, perPage: Int = 10) -> DataRequest {
         
-        return AF.request("\(ServiceConstants.baseURL)\(urlNews)", method: .get, headers: confgureHeaders())
+        return AF.request("\(ServiceConstants.baseURL)\(urlNews)?current_page=\(currentPage)&per_page=\(perPage)",
+                          method: .get,
+                          headers: confgureHeaders())
     }
     
     func downloadImage(url: String) -> DownloadRequest {

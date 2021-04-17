@@ -8,6 +8,7 @@
 import Foundation
 
 class Token: NSObject, Decodable {
+    
     let token: String
     
     init(token: String) {

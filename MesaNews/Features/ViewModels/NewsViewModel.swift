@@ -1,5 +1,5 @@
 //
-//  HighlightsVewModel.swift
+//  NewsViewModel.swift
 //  MesaNews
 //
 //  Created by Maurício de Freitas Sayão on 17/04/21.
@@ -7,24 +7,27 @@
 
 import Foundation
 
-final class HighlightsVewModel: NSObject {
+final class NewsViewModel: NSObject {
     
-    private var highlights: [News]
-    weak var delegate: HighlightsViewControllerDelegate?
+    private var collection: CollectionNews
+    weak var delegate: NewsViewControllerDelegate?
     weak var imageDelegate: ImageDelegate?
     private let service = NewsService()
     
-    init(highlights: [News]){
-        self.highlights = highlights
+    init(collection: CollectionNews){
+        self.collection = collection
     }
     
-    func loadNews() {
-        let request = service.highlights()
+    func loadNews(pagination: Pagination) {
         
-        request.responseDecodable(of: CollectionHighlights.self) { response in
+        let request = service.news(currentPage: pagination.currentPage,
+                                   perPage: pagination.perPage)
+        
+        request.responseDecodable(of: CollectionNews.self) { response in
             switch response.result {
+            
             case let .success(result):
-                self.delegate?.getInformationBack(data: result.data)
+                self.delegate?.getInformationBack(data: result)
                 
             case .failure(_):
                 self.delegate?.getInformationBack(data: nil)
@@ -37,6 +40,7 @@ final class HighlightsVewModel: NSObject {
         
         request.responseData { response in
             switch response.result {
+            
             case let .success(result):
                 self.imageDelegate?.getImagesFrom(url, data: result)
                 completion()
@@ -45,7 +49,5 @@ final class HighlightsVewModel: NSObject {
                 self.imageDelegate?.getImagesFrom(url, data: nil)
             }
         }
-        
-        
     }
 }

@@ -8,5 +8,6 @@
 import Foundation
 
 struct ServiceConstants {
+    
     static let baseURL = "https://mesa-news-api.herokuapp.com"
 }

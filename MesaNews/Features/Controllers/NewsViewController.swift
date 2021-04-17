@@ -16,6 +16,11 @@ final class NewsViewController: UIViewController {
     private var highlights: [News] = []
     private var highlightsViewModel: HighlightsVewModel!
     
+    @IBOutlet weak var newsTableView: UITableView!
+    private var newsViewModel: NewsViewModel!
+    private var pagination: Pagination!
+    private var news: [News] = []
+    
 }
 
 // MARK: Life cycle
@@ -30,8 +35,19 @@ extension NewsViewController {
         
         highlightsViewModel = HighlightsVewModel(highlights: .init())
         highlightsViewModel.delegate = self
+        highlightsViewModel.imageDelegate = self
         
         highlightsViewModel.loadNews()
+        
+        newsTableView.delegate = self
+        newsTableView.dataSource = self
+        
+        pagination = Pagination()
+        newsViewModel = NewsViewModel(collection: .init(pagination: .init(), data: []))
+        newsViewModel.loadNews(pagination: pagination)
+        newsViewModel.imageDelegate = self
+        
+        newsViewModel.delegate = self
         
     }
     
@@ -79,6 +95,8 @@ extension NewsViewController: UICollectionViewDataSource {
         cell.descriptionLabel.text = news.title
         cell.titleLabel.text = news.desc
         cell.newsImageView.layer.cornerRadius = 10.0
+        cell.newsImageView.image = .none
+        cell.newsImageView.backgroundColor = .lightGray
         
         if let image = imageFromCache(identifier: news.imageURL) {
             
@@ -99,9 +117,9 @@ extension NewsViewController: UICollectionViewDataSource {
         return cell
     }
     
-    
 }
 
+// MARK: HighlightsViewControllerDelegate
 extension NewsViewController : HighlightsViewControllerDelegate {
     
     func getInformationBack(data: [News]?) {
@@ -114,17 +132,102 @@ extension NewsViewController : HighlightsViewControllerDelegate {
         
     }
     
+}
+
+// MARK: UITableViewDataSource
+extension NewsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        news.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let news = self.news[indexPath.row]
+        
+        let cell = newsTableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsTableViewCell
+        
+        cell.likeDelegate = self
+        cell.descriptionLabel.text = news.title
+        cell.titleLabel.text = news.desc
+        cell.newsImageView.layer.cornerRadius = 10.0
+        cell.newsImageView.image = .none
+        cell.newsImageView.backgroundColor = .lightGray
+        
+        cell.like = news.favorite
+        cell.row = indexPath.row
+       
+        
+        if let image = imageFromCache(identifier: news.imageURL) {
+            
+            cell.newsImageView.image = image
+            
+        } else {
+            
+            highlightsViewModel.loadImage(url: news.imageURL) {
+                
+                if let image = self.imageFromCache(identifier: news.imageURL)  {
+                    
+                    cell.newsImageView.image = image
+                    
+                }
+            }
+        }
+        
+        if indexPath.row == self.news.count - 1 {
+            pagination.currentPage += 1
+            if pagination.currentPage <= pagination.totalPages {
+                newsViewModel.loadNews(pagination: pagination)
+            }
+        }
+        
+        return cell
+    }
+
+}
+
+// MARK: UITableViewDelegate
+extension NewsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100.0
+    }
+}
+
+// MARK: NewsViewControllerDelegate
+extension NewsViewController: NewsViewControllerDelegate {
+    
+    func getInformationBack(data: CollectionNews?) {
+        guard let collection = data else { return }
+        
+        news += collection.data
+        pagination = collection.pagination
+        
+        newsTableView.reloadData()
+    }
+    
+}
+
+// MARK: ImageDelegate
+extension NewsViewController: ImageDelegate {
+    
     func getImagesFrom(_ url: String, data: Data?) {
         
         guard let imageFromURL = data else { return }
-        
+
         if let image = UIImage(data: imageFromURL) {
-            
+
             self.imageCache.add(image, withIdentifier: url )
         }
-        
     }
     
+}
+
+// MARK: FavoriteDelegate
+extension NewsViewController: FavoriteDelegate {
+    func likeNews(index: Int, isLike: Bool) {
+        news[index].favorite = isLike
+    }
 }
 
 

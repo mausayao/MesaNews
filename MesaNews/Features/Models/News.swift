@@ -13,6 +13,8 @@ final class News: NSObject, Decodable {
     var desc: String
     var imageURL: String
     
+    var favorite: Bool = false
+    
     init(title: String, description: String, imageURL: String) {
         self.title = title
         self.desc = description

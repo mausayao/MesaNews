@@ -6,5 +6,6 @@
 //
 
 protocol UserViewControllerDelegate: AnyObject {
+    
     func getInformationBack(data: String?)
 }

@@ -6,5 +6,6 @@
 //
 
 protocol LoginViewControllerDelegate: AnyObject {
+    
     func getInformationBack(data: String?)
 }
