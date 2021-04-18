@@ -20,7 +20,10 @@ final class UserViewModel: NSObject {
     }
     
     func validate() {
-        isValid = !user.name.isEmpty && !user.email.isEmpty && !user.password.isEmpty
+        isValid = !user.name.isEmpty
+            && !user.email.isEmpty
+            && !user.password.isEmpty
+            && Utils.isValidEmail(user.email)
     }
     
     func sendUser() {

@@ -18,18 +18,24 @@ final class LoginViewModel: NSObject {
     }
     
     func validate() {
-        isValid = !login.email.isEmpty && !login.password.isEmpty
+        isValid = !login.email.isEmpty
+            && Utils.isValidEmail(login.email)
+            && !login.password.isEmpty
     }
     
     func sendLogin() {
         let request = LoginService().post(login: login)
         
         request.responseDecodable(of: Token.self) { response in
+            
             switch response.result {
+            
             case let .success(result):
+                
                 self.delegate?.getInformationBack(data: result.token)
                 
             case .failure(_):
+                
                 self.delegate?.getInformationBack(data: nil)
             }
         }

@@ -34,7 +34,7 @@ extension NewsViewController {
         highLightsCollectionView.delegate = self
         highLightsCollectionView.backgroundColor = .clear
         
-        highlightsViewModel = HighlightsVewModel(highlights: .init())
+        highlightsViewModel = HighlightsVewModel()
         highlightsViewModel.delegate = self
         highlightsViewModel.imageDelegate = self
         
@@ -44,7 +44,7 @@ extension NewsViewController {
         newsTableView.dataSource = self
         
         pagination = Pagination()
-        newsViewModel = NewsViewModel(collection: .init(pagination: .init(), data: []))
+        newsViewModel = NewsViewModel()
         newsViewModel.loadNews(pagination: pagination)
         newsViewModel.imageDelegate = self
         

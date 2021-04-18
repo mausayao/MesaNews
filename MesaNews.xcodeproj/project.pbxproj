@@ -31,6 +31,8 @@
 		22AE57282627A6280058D672 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE57272627A6280058D672 /* Token.swift */; };
 		22AE572E2627AF670058D672 /* UserViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE572D2627AF670058D672 /* UserViewControllerDelegate.swift */; };
 		22AE574B2627BC560058D672 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE574A2627BC560058D672 /* ServiceConstants.swift */; };
+		22C24035262C99D20048072C /* UserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C24034262C99D20048072C /* UserViewModelTests.swift */; };
+		22C2403D262C9E1B0048072C /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C2403C262C9E1B0048072C /* LoginViewModelTests.swift */; };
 		22CA3497262C76DC00A39E69 /* ChangeIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA3496262C76DC00A39E69 /* ChangeIconProtocol.swift */; };
 		22D118C426286937007A2F8B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D118C326286937007A2F8B /* Login.swift */; };
 		22D118C926286AEC007A2F8B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D118C826286AEC007A2F8B /* LoginService.swift */; };
@@ -101,6 +103,8 @@
 		22AE57272627A6280058D672 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		22AE572D2627AF670058D672 /* UserViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerDelegate.swift; sourceTree = "<group>"; };
 		22AE574A2627BC560058D672 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
+		22C24034262C99D20048072C /* UserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTests.swift; sourceTree = "<group>"; };
+		22C2403C262C9E1B0048072C /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		22CA3496262C76DC00A39E69 /* ChangeIconProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIconProtocol.swift; sourceTree = "<group>"; };
 		22D118C326286937007A2F8B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		22D118C826286AEC007A2F8B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				229AD4DD262655BB006915C1 /* MesaNewsTests.swift */,
+				22C24034262C99D20048072C /* UserViewModelTests.swift */,
+				22C2403C262C9E1B0048072C /* LoginViewModelTests.swift */,
 				229AD4DF262655BB006915C1 /* Info.plist */,
 			);
 			path = MesaNewsTests;
@@ -656,7 +662,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C2403D262C9E1B0048072C /* LoginViewModelTests.swift in Sources */,
 				229AD4DE262655BB006915C1 /* MesaNewsTests.swift in Sources */,
+				22C24035262C99D20048072C /* UserViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

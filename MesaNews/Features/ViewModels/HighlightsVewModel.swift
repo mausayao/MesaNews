@@ -9,14 +9,9 @@ import Foundation
 
 final class HighlightsVewModel: NSObject {
     
-    private var highlights: [News]
     weak var delegate: HighlightsViewControllerDelegate?
     weak var imageDelegate: ImageDelegate?
     private let service = NewsService()
-    
-    init(highlights: [News]){
-        self.highlights = highlights
-    }
     
     func loadNews() {
         let request = service.highlights()

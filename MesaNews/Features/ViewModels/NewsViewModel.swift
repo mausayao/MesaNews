@@ -9,14 +9,14 @@ import Foundation
 
 final class NewsViewModel: NSObject {
     
-    private var collection: CollectionNews
+//    private var collection: CollectionNews
     weak var delegate: NewsViewControllerDelegate?
     weak var imageDelegate: ImageDelegate?
     private let service = NewsService()
     
-    init(collection: CollectionNews){
-        self.collection = collection
-    }
+//    init(collection: CollectionNews){
+//        self.collection = collection
+//    }
     
     func loadNews(pagination: Pagination) {
         
