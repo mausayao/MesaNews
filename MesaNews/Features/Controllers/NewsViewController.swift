@@ -61,6 +61,14 @@ extension NewsViewController {
         return imageCache.image(withIdentifier: identifier)
     }
     
+    private func shreItem(url: String) {
+        
+        let items = [URL(string: url)!]
+        let shareActivity = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(shareActivity, animated: true)
+        
+    }
+    
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -98,8 +106,12 @@ extension NewsViewController: UICollectionViewDataSource {
         cell.newsImageView.layer.cornerRadius = 10.0
         cell.newsImageView.image = #imageLiteral(resourceName: "no-image-available")
         cell.newsImageView.backgroundColor = .lightGray
+        
         cell.likeDelegate = self
+        cell.shareDelegate = self
+
         cell.row = indexPath.row
+        cell.url = news.url
         cell.like = news.isLike
         
         if let image = imageFromCache(identifier: news.imageURL) {
@@ -159,6 +171,8 @@ extension NewsViewController: UITableViewDataSource {
         let cell = newsTableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsTableViewCell
         
         cell.likeDelegate = self
+        cell.shareDelegate = self
+        
         cell.descriptionLabel.text = news.title
         cell.titleLabel.text = news.desc
         cell.newsImageView.layer.cornerRadius = 10.0
@@ -166,6 +180,7 @@ extension NewsViewController: UITableViewDataSource {
         cell.newsImageView.backgroundColor = .lightGray
         
         cell.like = news.isLike
+        cell.url = news.url
         cell.row = indexPath.row
         
         
@@ -238,4 +253,20 @@ extension NewsViewController: CellDelegate {
         }
     }
     
+}
+
+// MARK: ShareDelegate
+extension NewsViewController: ShareDelegate {
+    
+    func share(_ view: UIView, url: String) {
+        
+        if let _ = view as? HighlightsCollectionViewCell {
+            shreItem(url: url)
+        }
+        
+        if let _ = view as? NewsTableViewCell {
+            shreItem(url: url)
+        }
+    }
+
 }

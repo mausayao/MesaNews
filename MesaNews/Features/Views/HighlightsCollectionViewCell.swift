@@ -17,7 +17,10 @@ final class HighlightsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var likeButton: UIButton!
     
     weak var likeDelegate: CellDelegate?
-    var row:Int = 0
+    weak var shareDelegate: ShareDelegate?
+    
+    var row: Int = 0
+    var url: String = ""
     
     var like = false {
         didSet {
@@ -33,6 +36,9 @@ final class HighlightsCollectionViewCell: UICollectionViewCell {
         
     }
 
+    @IBAction func shareButton(_ sender: UIButton) {
+        shareDelegate?.share(self, url: url)
+    }
 }
 
 

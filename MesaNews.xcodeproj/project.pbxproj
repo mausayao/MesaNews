@@ -20,6 +20,7 @@
 		225929CE2627370200791DEC /* TextFieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929CD2627370200791DEC /* TextFieldConstants.swift */; };
 		225929D6262745B700791DEC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929D5262745B700791DEC /* UserViewModel.swift */; };
 		225929E72627861500791DEC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225929E62627861500791DEC /* UserService.swift */; };
+		229716E1262CEC2B00D54CC2 /* ShareDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229716E0262CEC2B00D54CC2 /* ShareDelegate.swift */; };
 		229AD4C7262655BA006915C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4C6262655BA006915C1 /* AppDelegate.swift */; };
 		229AD4C9262655BA006915C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4C8262655BA006915C1 /* SceneDelegate.swift */; };
 		229AD4CB262655BA006915C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD4CA262655BA006915C1 /* LoginViewController.swift */; };
@@ -86,6 +87,7 @@
 		225929CD2627370200791DEC /* TextFieldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConstants.swift; sourceTree = "<group>"; };
 		225929D5262745B700791DEC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		225929E62627861500791DEC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		229716E0262CEC2B00D54CC2 /* ShareDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDelegate.swift; sourceTree = "<group>"; };
 		229AD4C3262655BA006915C1 /* MesaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MesaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229AD4C6262655BA006915C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229AD4C8262655BA006915C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				22EB6E56262B8EE200AF9D91 /* ImageDelegate.swift */,
 				22EB6E5B262B982100AF9D91 /* CellDelegate.swift */,
 				22CA3496262C76DC00A39E69 /* ChangeIconProtocol.swift */,
+				229716E0262CEC2B00D54CC2 /* ShareDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				22D118E12628B81E007A2F8B /* LoginViewControllerDelegate.swift in Sources */,
 				22EB6E45262B616700AF9D91 /* NewsTableViewCell.swift in Sources */,
 				229AD4CB262655BA006915C1 /* LoginViewController.swift in Sources */,
+				229716E1262CEC2B00D54CC2 /* ShareDelegate.swift in Sources */,
 				22EB6E52262B752200AF9D91 /* NewsViewControllerDelegate.swift in Sources */,
 				2259299C26270EDD00791DEC /* UserViewController.swift in Sources */,
 				229AD4C7262655BA006915C1 /* AppDelegate.swift in Sources */,

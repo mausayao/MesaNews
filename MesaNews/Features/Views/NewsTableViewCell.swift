@@ -17,7 +17,10 @@ final class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     
     weak var likeDelegate: CellDelegate?
-    var row:Int = 0
+    weak var shareDelegate: ShareDelegate?
+    
+    var url: String = ""
+    var row: Int = 0
     
     var like = false {
         didSet {
@@ -33,6 +36,10 @@ final class NewsTableViewCell: UITableViewCell {
         
     }
     
+    @IBAction func shareButton(_ sender: UIButton) {
+        
+        shareDelegate?.share(self, url: url)
+    }
 }
 
 // MARK: ChangeIconProtocol
