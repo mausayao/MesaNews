@@ -15,16 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_3" translatesAutoresizingMaskIntoConstraints="NO" id="xMx-lh-6op">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xMx-lh-6op" secondAttribute="bottom" id="8VC-Xl-Dl1"/>
+                            <constraint firstItem="xMx-lh-6op" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eRq-4H-113"/>
+                            <constraint firstItem="xMx-lh-6op" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="kwe-2z-Be0"/>
+                            <constraint firstItem="xMx-lh-6op" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rfi-Uw-eCi"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399" y="241"/>
+            <point key="canvasLocation" x="-159.42028985507247" y="207.58928571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background_3" width="640" height="1136"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

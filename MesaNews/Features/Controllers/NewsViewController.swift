@@ -96,7 +96,7 @@ extension NewsViewController: UICollectionViewDataSource {
         cell.descriptionLabel.text = news.title
         cell.titleLabel.text = news.desc
         cell.newsImageView.layer.cornerRadius = 10.0
-        cell.newsImageView.image = .none
+        cell.newsImageView.image = #imageLiteral(resourceName: "no-image-available")
         cell.newsImageView.backgroundColor = .lightGray
         cell.likeDelegate = self
         cell.row = indexPath.row
@@ -147,6 +147,13 @@ extension NewsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        if indexPath.row == self.news.count - 1 {
+            pagination.currentPage += 1
+            if pagination.currentPage <= pagination.totalPages {
+                newsViewModel.loadNews(pagination: pagination)
+            }
+        }
+        
         let news = self.news[indexPath.row]
         
         let cell = newsTableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsTableViewCell
@@ -155,7 +162,7 @@ extension NewsViewController: UITableViewDataSource {
         cell.descriptionLabel.text = news.title
         cell.titleLabel.text = news.desc
         cell.newsImageView.layer.cornerRadius = 10.0
-        cell.newsImageView.image = .none
+        cell.newsImageView.image = #imageLiteral(resourceName: "no-image-available")
         cell.newsImageView.backgroundColor = .lightGray
         
         cell.like = news.isLike
@@ -175,13 +182,6 @@ extension NewsViewController: UITableViewDataSource {
                     cell.newsImageView.image = image
                     
                 }
-            }
-        }
-        
-        if indexPath.row == self.news.count - 1 {
-            pagination.currentPage += 1
-            if pagination.currentPage <= pagination.totalPages {
-                newsViewModel.loadNews(pagination: pagination)
             }
         }
         
