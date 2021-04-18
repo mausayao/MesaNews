@@ -38,15 +38,18 @@ final class NewsViewModel: NSObject {
     func loadImage(url: String, completion: @escaping () -> Void) {
         let request = service.downloadImage(url: url)
         
-        request.responseData { response in
-            switch response.result {
-            
-            case let .success(result):
-                self.imageDelegate?.getImagesFrom(url, data: result)
-                completion()
+        request.responseImage { response in
+            DispatchQueue.main.async {
                 
-            case .failure(_):
-                self.imageDelegate?.getImagesFrom(url, data: nil)
+                switch response.result {
+                
+                case let .success(result):
+                    self.imageDelegate?.getImagesFrom(url, data: result)
+                    completion()
+                    
+                case .failure(_):
+                    self.imageDelegate?.getImagesFrom(url, data: nil)
+                }
             }
         }
     }

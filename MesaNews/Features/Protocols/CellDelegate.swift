@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FavoriteDelegate: AnyObject {
+protocol CellDelegate: AnyObject {
     
-    func likeNews(index: Int, isLike: Bool)
+    func likeNews(_ view: UIView, index: Int, isLike: Bool)
 }

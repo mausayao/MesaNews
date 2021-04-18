@@ -22,12 +22,17 @@ final class HighlightsVewModel: NSObject {
         let request = service.highlights()
         
         request.responseDecodable(of: CollectionHighlights.self) { response in
-            switch response.result {
-            case let .success(result):
-                self.delegate?.getInformationBack(data: result.data)
+            DispatchQueue.main.async {
+                switch response.result {
                 
-            case .failure(_):
-                self.delegate?.getInformationBack(data: nil)
+                case let .success(result):
+                    
+                    self.delegate?.getInformationBack(data: result.data)
+                    
+                case .failure(_):
+                    
+                    self.delegate?.getInformationBack(data: nil)
+                }
             }
         }
     }
@@ -35,13 +40,18 @@ final class HighlightsVewModel: NSObject {
     func loadImage(url: String, completion: @escaping () -> Void) {
         let request = service.downloadImage(url: url)
         
-        request.responseData { response in
+        request.responseImage { response in
+            
             switch response.result {
+            
             case let .success(result):
+                
                 self.imageDelegate?.getImagesFrom(url, data: result)
+                
                 completion()
                 
             case .failure(_):
+                
                 self.imageDelegate?.getImagesFrom(url, data: nil)
             }
         }

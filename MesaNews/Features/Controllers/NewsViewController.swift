@@ -12,6 +12,7 @@ import AlamofireImage
 final class NewsViewController: UIViewController {
     
     @IBOutlet weak var highLightsCollectionView: UICollectionView!
+    
     private let imageCache = AutoPurgingImageCache(memoryCapacity: 111_111_111, preferredMemoryUsageAfterPurge: 90_000_000)
     private var highlights: [News] = []
     private var highlightsViewModel: HighlightsVewModel!
@@ -97,6 +98,9 @@ extension NewsViewController: UICollectionViewDataSource {
         cell.newsImageView.layer.cornerRadius = 10.0
         cell.newsImageView.image = .none
         cell.newsImageView.backgroundColor = .lightGray
+        cell.likeDelegate = self
+        cell.row = indexPath.row
+        cell.like = news.isLike
         
         if let image = imageFromCache(identifier: news.imageURL) {
             
@@ -154,9 +158,9 @@ extension NewsViewController: UITableViewDataSource {
         cell.newsImageView.image = .none
         cell.newsImageView.backgroundColor = .lightGray
         
-        cell.like = news.favorite
+        cell.like = news.isLike
         cell.row = indexPath.row
-       
+        
         
         if let image = imageFromCache(identifier: news.imageURL) {
             
@@ -183,7 +187,7 @@ extension NewsViewController: UITableViewDataSource {
         
         return cell
     }
-
+    
 }
 
 // MARK: UITableViewDelegate
@@ -211,23 +215,27 @@ extension NewsViewController: NewsViewControllerDelegate {
 // MARK: ImageDelegate
 extension NewsViewController: ImageDelegate {
     
-    func getImagesFrom(_ url: String, data: Data?) {
+    func getImagesFrom(_ url: String, data: UIImage?) {
         
-        guard let imageFromURL = data else { return }
-
-        if let image = UIImage(data: imageFromURL) {
-
-            self.imageCache.add(image, withIdentifier: url )
-        }
+        guard let image = data else { return }
+        
+        self.imageCache.add(image, withIdentifier: url )
     }
     
 }
 
-// MARK: FavoriteDelegate
-extension NewsViewController: FavoriteDelegate {
-    func likeNews(index: Int, isLike: Bool) {
-        news[index].favorite = isLike
+// MARK: TableViewCellDelegate
+extension NewsViewController: CellDelegate {
+    
+    func likeNews(_ view: UIView, index: Int, isLike: Bool) {
+        
+        if let _ = view as? HighlightsCollectionViewCell {
+            highlights[index].isLike = isLike
+        }
+        
+        if let _ = view as? NewsTableViewCell {
+            news[index].isLike = isLike
+        }
     }
+    
 }
-
-

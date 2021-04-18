@@ -72,7 +72,7 @@ extension UserViewController: UITextFieldDelegate {
                     viewModel.email = email
                 } else {
                     Utils.message(title: "E-mail",
-                                  message: "Campo inválido",
+                                  message: "Invalid format",
                                   error: true,
                                   view: self,
                                   completion: nil)
@@ -87,8 +87,8 @@ extension UserViewController: UITextFieldDelegate {
             
             if !isAPasswordValid(password: pass, confirm: confirm) {
                 
-                Utils.message(title: "Senha",
-                              message: "Senha não são iguais",
+                Utils.message(title: "Password",
+                              message: "Password are not the same",
                               error: true,
                               view: self,
                               completion: nil)
@@ -142,10 +142,10 @@ extension UserViewController {
     private func configureTextFields() {
         
         let namePresset =  DefaultTextField(text: "",
-                                            placeholder: "Nome completo",
+                                            placeholder: "Full name",
                                             contentType: .name,
                                             keyboardType: .alphabet,
-                                            textAccessibilityLabel: "Campo de texto Nome Completo")
+                                            textAccessibilityLabel: "Text Field Full name")
         
         nameTextField.configureTextField(presset: namePresset)
         nameTextField.delegate = self
@@ -154,26 +154,26 @@ extension UserViewController {
                                             placeholder: "E-mail",
                                             contentType: .emailAddress,
                                             keyboardType: .emailAddress,
-                                            textAccessibilityLabel: "Campo de texto E-mail")
+                                            textAccessibilityLabel: "Text Field E-mail")
         
         emailTextField.configureTextField(presset: emailPresset)
         emailTextField.delegate = self
         
         let passwordPresset = DefaultTextField(text: "",
-                                               placeholder: "Senha",
+                                               placeholder: "Password",
                                                contentType: .password,
                                                keyboardType: .alphabet,
-                                               textAccessibilityLabel: "Campo de texto Senha")
+                                               textAccessibilityLabel: "Text Field Password")
         
         passwordTextField.configureTextField(presset: passwordPresset)
         passwordTextField.isSecureTextEntry = true
         passwordTextField.delegate = self
         
         let confirmPasswordPresset = DefaultTextField(text: "",
-                                                      placeholder: "Confirmação de senha",
+                                                      placeholder: "Confirm Password",
                                                       contentType: .password,
                                                       keyboardType: .alphabet,
-                                                      textAccessibilityLabel: "Campo de texto Confirmação de Senha")
+                                                      textAccessibilityLabel: "Field Text Confirm Password")
         
         confirmPasswordTextField.configureTextField(presset: confirmPasswordPresset)
         confirmPasswordTextField.isSecureTextEntry = true
@@ -198,15 +198,15 @@ extension UserViewController: UserViewControllerDelegate {
         self.removeSpinner()
         if let result = data {
             
-            Utils.message(title: "Usuário", message: "Cadastro realizado com sucesso", view: self) {
+            Utils.message(title: "User", message: "Account successfully completed", view: self) {
                 KeychainWrapper.standard.set(result, forKey: "token")
                 self.navigationController?.popViewController(animated: true)
             }
            
         } else {
             
-            Utils.message(title: "Erro!",
-                          message: "Ocorreu um erro ao realizar o cadastro",
+            Utils.message(title: "Error!",
+                          message: "An error occurred while registering",
                           error: true,
                           view: self, completion: nil)
         }

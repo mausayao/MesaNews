@@ -64,16 +64,16 @@ extension LoginViewController {
                                             placeholder: "E-mail",
                                             contentType: .emailAddress,
                                             keyboardType: .emailAddress,
-                                            textAccessibilityLabel: "Campo de texto E-mail")
+                                            textAccessibilityLabel: "Text Field E-mail")
         
         emailTextField.configureTextField(presset: emailPresset)
         emailTextField.delegate = self
         
         let passwordPresset = DefaultTextField(text: "",
-                                               placeholder: "Senha",
+                                               placeholder: "Password",
                                                contentType: .password,
                                                keyboardType: .alphabet,
-                                               textAccessibilityLabel: "Campo de texto Senha")
+                                               textAccessibilityLabel: "Text Field Password")
         
         passwordTextField.configureTextField(presset: passwordPresset)
         passwordTextField.isSecureTextEntry = true
@@ -114,7 +114,7 @@ extension LoginViewController: UITextFieldDelegate {
                 } else {
                     
                     Utils.message(title: "E-mail",
-                                  message: "Formato inválido de e-mail",
+                                  message: "Invalid format",
                                   error: true,
                                   view: self,
                                   completion: nil)
@@ -168,8 +168,8 @@ extension LoginViewController: LoginViewControllerDelegate {
             
         } else {
             
-            Utils.message(title: "Erro!",
-                          message: "Login ou Senha inválido",
+            Utils.message(title: "Error!",
+                          message: "Ivalid e-mail or password",
                           error: true,
                           view: self, completion: nil)
         }

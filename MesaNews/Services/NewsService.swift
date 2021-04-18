@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 import SwiftKeychainWrapper
 
 final class NewsService {
@@ -39,9 +40,9 @@ final class NewsService {
                           headers: confgureHeaders())
     }
     
-    func downloadImage(url: String) -> DownloadRequest {
+    func downloadImage(url: String) -> DataRequest {
         
-        return  AF.download(url)
+        return  AF.request(url)
         
     }
     

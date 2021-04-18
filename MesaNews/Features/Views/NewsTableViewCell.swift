@@ -14,9 +14,9 @@ final class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
     
-    weak var likeDelegate: FavoriteDelegate?
+    weak var likeDelegate: CellDelegate?
     var row:Int = 0
     
     var like = false {
@@ -25,18 +25,27 @@ final class NewsTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func likeButton(_ sender: UIButton) {
+    @IBAction func likePressed(_ sender: UIButton) {
+        
         like = !like
-        likeDelegate?.likeNews(index: row, isLike: like)
+        likeDelegate?.likeNews(self, index: row, isLike: like)
         changeIcon()
         
     }
     
-    private func changeIcon() {
+}
+
+// MARK: ChangeIconProtocol
+extension NewsTableViewCell: ChangeIconProtocol {
+    
+    func changeIcon() {
         if like {
-            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            
         } else {
-            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            
+            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
     

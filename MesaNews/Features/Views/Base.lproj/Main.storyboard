@@ -3,6 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -25,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-216" y="-222"/>
         </scene>
-        <!--Login-->
+        <!--Log In-->
         <scene sceneID="ARW-c1-BLF">
             <objects>
                 <viewController id="Lgn-qq-o6I" customClass="LoginViewController" customModule="MesaNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +57,7 @@
                                         <rect key="frame" x="0.0" y="114" width="286" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <state key="normal" title="Acessar">
+                                        <state key="normal" title="Log In">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -66,7 +67,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwq-i6-WQ7" userLabel="Signup Button">
                                         <rect key="frame" x="0.0" y="171" width="286" height="40"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <state key="normal" title="ou crie sua conta">
+                                        <state key="normal" title="Or create your Account">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -89,7 +90,7 @@
                             <constraint firstItem="Vdq-jC-bM4" firstAttribute="leading" secondItem="4DP-Db-RG8" secondAttribute="leading" id="oqt-eo-X0o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="Oip-zE-RBm"/>
+                    <navigationItem key="navigationItem" title="Log In" id="Oip-zE-RBm"/>
                     <connections>
                         <outlet property="emailTextField" destination="AiO-6Q-cHZ" id="MNW-Xf-rVt"/>
                         <outlet property="passwordTextField" destination="lLS-OM-Seu" id="At8-BW-az9"/>
@@ -102,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="756.92307692307691" y="-221.09004739336493"/>
         </scene>
-        <!--Notícias-->
+        <!--News-->
         <scene sceneID="3Mo-hu-GMs">
             <objects>
                 <viewController id="YcL-So-dcI" customClass="NewsViewController" customModule="MesaNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,7 +117,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmD-FI-t7t">
                                 <rect key="frame" x="0.0" y="44" width="320" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destaques" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPY-Be-Vwf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highlights" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPY-Be-Vwf">
                                         <rect key="frame" x="10" y="10" width="300" height="24"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -145,7 +146,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="210" height="166"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sk-2q-hXJ">
-                                                                    <rect key="frame" x="10" y="10" width="190" height="21.5"/>
+                                                                    <rect key="frame" x="10" y="10" width="140" height="21.5"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -156,15 +157,32 @@
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju5-S1-i4g">
+                                                                    <rect key="frame" x="160" y="10" width="40" height="40"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="0PK-xr-EF4"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="f5w-iv-X4K"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                                    <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <state key="normal">
+                                                                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="likePressed:" destination="LhP-r2-u9v" eventType="touchUpInside" id="ZyC-Kz-MWR"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25963192424469528" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
+                                                                <constraint firstItem="ju5-S1-i4g" firstAttribute="top" secondItem="ZC9-Vk-RGw" secondAttribute="top" constant="10" id="6zm-45-Lka"/>
                                                                 <constraint firstItem="5Sk-2q-hXJ" firstAttribute="top" secondItem="ZC9-Vk-RGw" secondAttribute="top" constant="10" id="CZ8-VT-vnc"/>
                                                                 <constraint firstAttribute="trailing" secondItem="GfK-sP-ZVb" secondAttribute="trailing" constant="10" id="ZOa-E1-Lga"/>
                                                                 <constraint firstItem="GfK-sP-ZVb" firstAttribute="leading" secondItem="ZC9-Vk-RGw" secondAttribute="leading" constant="10" id="aYR-8t-ygY"/>
-                                                                <constraint firstAttribute="trailing" secondItem="5Sk-2q-hXJ" secondAttribute="trailing" constant="10" id="bp7-oF-E84"/>
                                                                 <constraint firstAttribute="bottom" secondItem="GfK-sP-ZVb" secondAttribute="bottom" constant="25" id="eoz-hX-b6u"/>
                                                                 <constraint firstItem="5Sk-2q-hXJ" firstAttribute="leading" secondItem="ZC9-Vk-RGw" secondAttribute="leading" constant="10" id="hNE-B2-xtk"/>
+                                                                <constraint firstItem="ju5-S1-i4g" firstAttribute="leading" secondItem="5Sk-2q-hXJ" secondAttribute="trailing" constant="10" id="n10-Ol-WNN"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ju5-S1-i4g" secondAttribute="trailing" constant="10" id="nXg-ab-me8"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -187,6 +205,7 @@
                                                 <size key="customSize" width="210" height="166"/>
                                                 <connections>
                                                     <outlet property="descriptionLabel" destination="GfK-sP-ZVb" id="M8H-Nv-mgN"/>
+                                                    <outlet property="likeButton" destination="ju5-S1-i4g" id="ppI-hY-rcQ"/>
                                                     <outlet property="newsImageView" destination="lf0-7u-cQY" id="8ZU-uS-3bB"/>
                                                     <outlet property="titleLabel" destination="5Sk-2q-hXJ" id="pf7-NR-SYB"/>
                                                 </connections>
@@ -209,7 +228,7 @@
                                     <constraint firstItem="ekz-xS-fHw" firstAttribute="leading" secondItem="kmD-FI-t7t" secondAttribute="leading" constant="10" id="xcO-Lf-Nmy"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notícias" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knW-qG-bBX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knW-qG-bBX">
                                 <rect key="frame" x="10" y="344" width="300" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -248,9 +267,11 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="FeT-dz-jMQ"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="heart" catalog="system"/>
                                                     <connections>
-                                                        <action selector="likeButton:" destination="wI0-LA-Geo" eventType="touchUpInside" id="PfM-Nn-NtE"/>
+                                                        <action selector="likePressed:" destination="wI0-LA-Geo" eventType="touchUpInside" id="PfM-Nn-NtE"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrx-Zg-bgh">
@@ -277,7 +298,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="Nrx-Zg-bgh" id="ofA-qt-GNF"/>
-                                            <outlet property="favoriteButton" destination="VNi-T4-1Ep" id="aM5-Km-hNc"/>
+                                            <outlet property="likeButton" destination="VNi-T4-1Ep" id="aM5-Km-hNc"/>
                                             <outlet property="newsImageView" destination="iTC-aU-DZr" id="QYK-MW-xiS"/>
                                             <outlet property="titleLabel" destination="H1z-ve-wA8" id="TYN-fD-ZzR"/>
                                         </connections>
@@ -311,7 +332,7 @@
                             <constraint firstItem="ekz-xS-fHw" firstAttribute="top" secondItem="hPY-Be-Vwf" secondAttribute="bottom" id="u9k-nq-1gB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notícias" id="FVQ-Lc-Pgw"/>
+                    <navigationItem key="navigationItem" title="News" id="FVQ-Lc-Pgw"/>
                     <connections>
                         <outlet property="highLightsCollectionView" destination="ekz-xS-fHw" id="fzt-ko-bJi"/>
                         <outlet property="newsTableView" destination="3JL-lT-Etz" id="c2S-16-Ea3"/>
@@ -321,7 +342,7 @@
             </objects>
             <point key="canvasLocation" x="1811.25" y="125.70422535211267"/>
         </scene>
-        <!--Cadastro de Usuário-->
+        <!--New Account-->
         <scene sceneID="50R-Aw-2M5">
             <objects>
                 <viewController id="8gq-Df-H5r" customClass="UserViewController" customModule="MesaNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -361,7 +382,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-th-l3H">
                                         <rect key="frame" x="0.0" y="228" width="286" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <state key="normal" title="Salvar">
+                                        <state key="normal" title="Create">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -384,7 +405,7 @@
                             <constraint firstAttribute="bottom" secondItem="LCg-QS-kwr" secondAttribute="bottom" id="zNs-Zx-NhZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cadastro de Usuário" id="kfU-ir-bPU"/>
+                    <navigationItem key="navigationItem" title="New Account" id="kfU-ir-bPU"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="cbn-px-9t0" id="Miy-M1-gOs"/>
                         <outlet property="emailTextField" destination="BtD-dT-WT7" id="nUj-2h-sjg"/>
